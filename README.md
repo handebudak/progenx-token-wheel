@@ -117,20 +117,6 @@ CSS variables matching ProgenX platform's design language:
 - **Focus States**: Visible focus rings
 - **Live Regions**: Result announcements
 
-## 🧪 Testing
-
-### Cooldown Test
-```javascript
-// Reset cooldown in console
-localStorage.removeItem('progenx:lastSpinAt')
-```
-
-### Random Test
-```javascript
-// Test token distribution in console
-import { getWeightedRandomToken } from '@/lib/random'
-getWeightedRandomToken()
-```
 
 ## 🚀 Production
 

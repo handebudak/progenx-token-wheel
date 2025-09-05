@@ -56,9 +56,3 @@ export function formatRemainingTime(remainingMs: number): string {
   return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 }
 
-// Reset cooldown (for testing)
-export function resetCooldown(): void {
-  if (typeof window !== 'undefined') {
-    localStorage.removeItem(COOLDOWN_KEY);
-  }
-}
