@@ -1,79 +1,79 @@
-# ProgenX Token Çarkı 🎡
+# ProgenX Token Wheel 🎡
 
-ProgenX platformu için geliştirilmiş token çarkı uygulaması. Öğrenciler 24 saatte bir çarkı çevirerek token kazanabilirler.
+Token wheel application developed for the ProgenX platform. Students can spin the wheel every 24 hours to earn tokens.
 
-## ✨ Özellikler
+## ✨ Features
 
-- **50 Dilimli Çark**: Ağırlıklı rastgele token dağıtımı
-- **Akıcı Animasyon**: 5.2 saniyelik gerçekçi dönüş efekti
-- **24 Saat Cooldown**: Her çevirmeden sonra 24 saat bekleme
-- **Responsive Tasarım**: Mobil ve masaüstü uyumlu
-- **ProgenX Tema**: Platform tasarım diline uygun renkler ve stiller
+- **50-Slice Wheel**: Weighted random token distribution
+- **Smooth Animation**: 4-second realistic spin effect
+- **24-Hour Cooldown**: 24-hour wait time after each spin
+- **Responsive Design**: Mobile and desktop compatible
+- **ProgenX Theme**: Colors and styles matching the platform design language
 
-## 🎯 Token Dağıtım Oranları
+## 🎯 Token Distribution Rates
 
-| Kategori | Token Aralığı | Şans | Dilim Sayısı |
-|----------|---------------|------|---------------|
-| 🟢 Yeşil | 1-3 | %40 | 20 dilim |
-| 🔵 Mavi | 5-10 | %30 | 15 dilim |
-| 🟠 Turuncu | 15-25 | %20 | 10 dilim |
-| 🟣 Mor | 50 | %8 | 4 dilim |
-| 🔴 Kırmızı | 100 | %2 | 1 dilim |
+| Category | Token Range | Chance | Slice Count |
+|----------|-------------|--------|-------------|
+| 🟢 Green | 1-3 | 40% | 20 slices |
+| 🔵 Blue | 5-10 | 30% | 15 slices |
+| 🟠 Orange | 15-25 | 20% | 10 slices |
+| 🟣 Purple | 50 | 8% | 4 slices |
+| 🔴 Red | 100 | 2% | 1 slice |
 
-## 🚀 Kurulum
+## 🚀 Installation
 
-### Gereksinimler
+### Requirements
 - Node.js 18+ 
-- npm veya yarn
+- npm or yarn
 
-### Adımlar
+### Steps
 
-1. **Projeyi klonlayın:**
+1. **Clone the project:**
 ```bash
-git clone <repository-url>
+git clone https://github.com/handebudak/progenx-token-wheel.git
 cd progenx-token-wheel
 ```
 
-2. **Bağımlılıkları yükleyin:**
+2. **Install dependencies:**
 ```bash
 npm install
-# veya
+# or
 yarn install
 ```
 
-3. **Geliştirme sunucusunu başlatın:**
+3. **Start development server:**
 ```bash
 npm run dev
-# veya
+# or
 yarn dev
 ```
 
-4. **Tarayıcıda açın:**
+4. **Open in browser:**
 ```
 http://localhost:3000
 ```
 
-## 🏗️ Proje Yapısı
+## 🏗️ Project Structure
 
 ```
 src/
 ├── app/
-│   ├── globals.css          # Tema değişkenleri ve global stiller
-│   ├── layout.tsx           # Ana layout
-│   └── page.tsx             # Ana sayfa
+│   ├── globals.css          # Theme variables and global styles
+│   ├── layout.tsx           # Main layout
+│   └── page.tsx             # Home page
 ├── components/
-│   └── TokenWheel.tsx       # Ana çark bileşeni
+│   └── TokenWheel.tsx       # Main wheel component
 ├── hooks/
-│   ├── useCooldown.ts       # Cooldown yönetimi
-│   └── useInterval.ts       # Interval hook'u
+│   ├── useCooldown.ts       # Cooldown management
+│   └── useInterval.ts       # Interval hook
 └── lib/
-    ├── random.ts             # Ağırlıklı rastgele seçim
-    └── cooldown.ts          # Cooldown yardımcıları
+    ├── random.ts             # Weighted random selection
+    └── cooldown.ts          # Cooldown utilities
 ```
 
-## 🎨 Tema Sistemi
+## 🎨 Theme System
 
-ProgenX platformunun tasarım diline uygun CSS değişkenleri:
+CSS variables matching ProgenX platform's design language:
 
 ```css
 :root {
@@ -86,48 +86,48 @@ ProgenX platformunun tasarım diline uygun CSS değişkenleri:
 }
 ```
 
-## 🔧 Teknik Detaylar
+## 🔧 Technical Details
 
-### Çark Animasyonu
-- **Süre**: 5.2 saniye
-- **Easing**: Cubic-bezier ile overshoot efekti
-- **Dönüş**: 3 tam tur + hedef dilim açısı
+### Wheel Animation
+- **Duration**: 4 seconds
+- **Easing**: Cubic-bezier with overshoot effect
+- **Rotation**: 3 full turns + target slice angle
 
-### Cooldown Sistemi
-- **Süre**: 24 saat (86,400,000 ms)
-- **Depolama**: localStorage (mock Firebase)
-- **Güncelleme**: Her saniye geri sayım
+### Cooldown System
+- **Duration**: 24 hours (86,400,000 ms)
+- **Storage**: localStorage (mock Firebase)
+- **Update**: Countdown every second
 
-### Ağırlıklı Rastgele
-- **Algoritma**: Ağırlıklı kümülatif dağılım
-- **Dilim Eşleşmesi**: Kategori bazında rastgele dilim seçimi
-- **Açı Hesaplama**: 360° / 50 dilim = 7.2° per dilim
+### Weighted Random
+- **Algorithm**: Weighted cumulative distribution
+- **Slice Matching**: Random slice selection per category
+- **Angle Calculation**: 360° / 50 slices = 7.2° per slice
 
-## 📱 Responsive Tasarım
+## 📱 Responsive Design
 
-- **Mobil**: 320px+ (dikey düzen)
-- **Tablet**: 768px+ (orta düzen)
-- **Masaüstü**: 1024px+ (yatay düzen)
-- **Geniş Ekran**: 1440px+ (büyük düzen)
+- **Mobile**: 320px+ (vertical layout)
+- **Tablet**: 768px+ (medium layout)
+- **Desktop**: 1024px+ (horizontal layout)
+- **Wide Screen**: 1440px+ (large layout)
 
-## ♿ Erişilebilirlik
+## ♿ Accessibility
 
-- **Klavye Navigasyonu**: Enter/Space ile çevirme
-- **ARIA Labels**: Ekran okuyucu desteği
-- **Focus States**: Görünür focus ring'ler
-- **Live Regions**: Sonuç duyuruları
+- **Keyboard Navigation**: Spin with Enter/Space
+- **ARIA Labels**: Screen reader support
+- **Focus States**: Visible focus rings
+- **Live Regions**: Result announcements
 
-## 🧪 Test
+## 🧪 Testing
 
-### Cooldown Testi
+### Cooldown Test
 ```javascript
-// Console'da cooldown'u sıfırla
+// Reset cooldown in console
 localStorage.removeItem('progenx:lastSpinAt')
 ```
 
-### Rastgele Test
+### Random Test
 ```javascript
-// Console'da token dağıtımını test et
+// Test token distribution in console
 import { getWeightedRandomToken } from '@/lib/random'
 getWeightedRandomToken()
 ```
@@ -145,22 +145,22 @@ npm run start
 npm run lint
 ```
 
-## 📝 Lisans
+## 📝 License
 
-Bu proje ProgenX platformu için geliştirilmiştir.
+This project is developed for the ProgenX platform.
 
-## 🤝 Katkıda Bulunma
+## 🤝 Contributing
 
-1. Fork yapın
-2. Feature branch oluşturun (`git checkout -b feature/amazing-feature`)
-3. Commit yapın (`git commit -m 'Add amazing feature'`)
-4. Push yapın (`git push origin feature/amazing-feature`)
-5. Pull Request oluşturun
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## 📞 İletişim
+## 📞 Contact
 
 ProgenX Academy - [app.progenxacademy.com](https://app.progenxacademy.com)
 
 ---
 
-**Not**: Bu uygulama ProgenX platformunun tasarım diline uygun olarak geliştirilmiştir. Renkler, fontlar ve spacing değerleri platform ile uyumludur.
+**Note**: This application is developed to match ProgenX platform's design language. Colors, fonts, and spacing values are consistent with the platform.
