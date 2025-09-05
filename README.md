@@ -145,22 +145,13 @@ npm run start
 npm run lint
 ```
 
-## 📝 License
+## 🧪 Test Mode
 
-This project is developed for the ProgenX platform.
+For development and testing purposes, you can enable test mode by setting `isTestMode = true` in `src/lib/cooldown.ts`. This will reduce the cooldown period from 24 hours to 10 seconds, making it easier to test the wheel functionality.
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📞 Contact
-
-ProgenX Academy - [app.progenxacademy.com](https://app.progenxacademy.com)
-
----
+```typescript
+// In src/lib/cooldown.ts
+const isTestMode = true; // Enable test mode
+```
 
 **Note**: This application is developed to match ProgenX platform's design language. Colors, fonts, and spacing values are consistent with the platform.
