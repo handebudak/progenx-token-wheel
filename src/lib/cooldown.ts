@@ -2,7 +2,7 @@ const COOLDOWN_KEY = 'progenx:lastSpinAt';
 const COOLDOWN_DURATION = 24 * 60 * 60 * 1000; // 24 hours (milliseconds)
 
 // Test mode - only active in development (currently disabled)
-const isTestMode = false // process.env.NODE_ENV === 'development' && process.env.NEXT_PUBLIC_TEST_MODE === 'true';
+const isTestMode = true // process.env.NODE_ENV === 'development' && process.env.NEXT_PUBLIC_TEST_MODE === 'true';
 const TEST_COOLDOWN_DURATION = 10 * 1000; // 10 seconds (for testing)
 
 // Get active cooldown duration
