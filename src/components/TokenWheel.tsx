@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { useCooldown } from '@/hooks/useCooldown';
-import { getWeightedRandomToken, getWheelSliceIndex, getWheelAngle, TOKEN_CATEGORIES } from '@/lib/random';
+import { getWeightedRandomSlice, getWheelAngle, getTokenForSlice, TOKEN_CATEGORIES } from '@/lib/random';
 import { saveLastSpinTime } from '@/lib/cooldown';
 
 interface SpinResult {
@@ -45,16 +45,16 @@ export default function TokenWheel() {
 
     setIsSpinning(true);
     setResult(null);
+    setRotation(0); // Reset rotation to 0
 
-    // Get weighted random result
-    const { tokens, category } = getWeightedRandomToken();
-    const sliceIndex = getWheelSliceIndex(category);
+    // Get weighted random slice
+    const { sliceIndex, category } = getWeightedRandomSlice();
     const targetAngle = getWheelAngle(sliceIndex);
 
     // Wheel animation (4 seconds)
     const spinDuration = 4000;
-    const startRotation = rotation;
-    const targetRotation = startRotation + 360 * 3 + targetAngle; // 3 full turns + target angle
+    const startRotation = 0; // Always start from 0
+    const targetRotation = 360 * 3 + targetAngle; // 3 full turns + target angle
 
     const startTime = Date.now();
     
@@ -73,6 +73,9 @@ export default function TokenWheel() {
       } else {
         // Animation finished, wait 0.5 seconds then show result
         setTimeout(() => {
+          // Get token amount for the final slice position
+          const { tokens } = getTokenForSlice(sliceIndex);
+          
           setIsSpinning(false);
           setResult({
             tokens,
